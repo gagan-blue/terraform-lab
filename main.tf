@@ -1,32 +1,13 @@
 provider "aws" {
- region     = "us-east-1"
+  region     = "ap-south-1"
 }
 
-variable "count" {
- default = 3
-}
-
-data "aws_ami" "baseami" {
- most_recent = true
-
- filter {
-   name   = "name"
-   values = ["apache-base-ami"]
- }
-}
 resource "aws_instance" "apache" {
- ami           = "${data.aws_ami.baseami.id}"
- instance_type = "t2.micro"
- key_name = "cckeypair"
- count = "${var.count}"
+  ami           = "ami-0693ef8916d694a6b"
+  instance_type = "t2.micro"
+  key_name = "dell-tower"
 
- tags{
-   Name ="apache-server-${count.index}"
- }
+  tags {
+    Name = "apache-server"
+  }
 }
-
-output "public-dns" {
- value = "${aws_instance.apache.*.public_dns}"
-}
-
-
