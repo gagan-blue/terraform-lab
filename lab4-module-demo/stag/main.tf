@@ -2,7 +2,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-#1. This root module variable is for passing value child module's variable - ec2_type
+#1. This root module variable is for passing value to child module's variable - ec2_type
 variable "inst_type" {default= "t2.micro"} 
 
 #2. notice that we have not defined resources here
