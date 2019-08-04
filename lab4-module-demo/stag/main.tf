@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 #1. This root module variable is for passing value child module's variable - ec2_type
-variable "inst_type" {} 
+variable "inst_type" {default= "t2.micro"} 
 
 #2. notice that we have not defined resources here
 
@@ -13,7 +13,9 @@ module "ec2" {
   #3. ec2_type is child module's variable
 }
 
-#referencing child module's otput in root module's variable/resource/data/output block {
+#cannot reference attributes of resources defined in child module from root module.
+
+#referencing child module's output from root module (variable/resource/data/output block) {
 #  something = module.ec2.<output_variable>
 #}
 
@@ -44,4 +46,15 @@ output "instance_ids" {
     #    {
     #      "module": "module.ec2",
 
+#local variable
+#echo var.inst_type | terraform console
+  #t2.micro
 
+
+#child module's output value
+#echo "module.ec2.instance_ids" | terraform console
+
+
+#local module's outputs
+#terraform output
+  #instance_ids = i-049d8d278a5348160
