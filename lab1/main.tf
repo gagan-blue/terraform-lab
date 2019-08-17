@@ -21,7 +21,8 @@ output "public-dns" {
     #Adding a Tag to Your Instance ====> aws ec2 create-tags
     #Connecting to Your Instance
     #Listing Your Instances ====>  aws ec2 describe-instances
-    #Terminating an Instance ====>    aws ec2 terminate-instances
+    #Terminating an Instance ====>    aws ec2 terminate-instances --instance-ids i-006e85279c0371775
+
 
 #https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
 
