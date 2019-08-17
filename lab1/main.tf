@@ -14,6 +14,27 @@ output "public-dns" {
  value = "${aws_instance.apache.*.public_dns}"
 }
 
+#https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-instances.html
+
+    #Launching an Instance ====>  aws ec2 run-instances
+    #Adding a Block Device to Your Instance
+    #Adding a Tag to Your Instance ====> aws ec2 create-tags
+    #Connecting to Your Instance
+    #Listing Your Instances ====>  aws ec2 describe-instances
+    #Terminating an Instance ====>    aws ec2 terminate-instances
+
+#https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
+
+    #describe-instances
+    #[--filters <value>]
+    #[--instance-ids <value>]
+    #[--dry-run | --no-dry-run]
+    #[--cli-input-json <value>]
+    #[--starting-token <value>]
+    #[--page-size <value>]
+    #[--max-items <value>]
+    #[--generate-cli-skeleton <value>]
+
 #terraform output public-dns
     #[
     #  "ec2-13-232-177-218.ap-south-1.compute.amazonaws.com",
