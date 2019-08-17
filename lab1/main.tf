@@ -13,3 +13,8 @@ resource "aws_instance" "apache" {
 output "public-dns" {
  value = "${aws_instance.apache.*.public_dns}"
 }
+
+#echo "aws_instance.apache.0.public_dns" | terraform console
+    #ec2-13-232-177-218.ap-south-1.compute.amazonaws.com
+#gagan-Tower> echo "aws_instance.apache.1.public_dns" | terraform console
+    #ec2-13-233-168-159.ap-south-1.compute.amazonaws.com
