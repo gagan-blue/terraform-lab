@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "apache" {
-  ami           = "ami-0693ef8916d694a6b"
+  ami           = "ami-0cb0e70f44e1a4bb5"
   instance_type = "t2.micro"
   count=2
   key_name = "dell-tower" # can also use 'data' to access list of all key-pair resources
@@ -17,9 +17,10 @@ output "public-dns" {
 #https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-instances.html
 
     #Launching an Instance ====>  aws ec2 run-instances
-    #Adding a Block Device to Your Instance
+    #Adding a Block Device to Your Instance ==> --block-device-mappings "[{\"DeviceName\":\"/dev/sdf\",\"Ebs\":{\"VolumeSize\":20,\"DeleteOnTermination\":false}}]"
+
     #Adding a Tag to Your Instance ====> aws ec2 create-tags
-    #Connecting to Your Instance
+    #Connecting to Your Instance  ====> ssh
     #Listing Your Instances ====>  aws ec2 describe-instances
     #Terminating an Instance ====>    aws ec2 terminate-instances --instance-ids i-006e85279c0371775
 
